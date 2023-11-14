@@ -5,7 +5,7 @@ import jakarta.persistence.*;
 import java.util.Objects;
 
 @Entity
-@Table(name = "tb-game")
+@Table(name = "tb_game")
 public class Game {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -15,10 +15,15 @@ public class Game {
     @Column(name = "game_year")
     private Integer year;
     private String genre;
-    private String plataforms;
+    private String platforms;
     private Double score;
     private String imgUrl;
+
+    @Column(columnDefinition = "TEXT")
+
     private String shortDescription;
+    @Column(columnDefinition = "TEXT")
+
     private String longDescription;
 
     public Game() {}
@@ -28,7 +33,7 @@ public class Game {
         this.title = title;
         this.year = year;
         this.genre = genre;
-        this.plataforms = plataforms;
+        this.platforms = plataforms;
         this.score = score;
         this.imgUrl = imgUrl;
         this.shortDescription = shortDescription;
@@ -67,12 +72,12 @@ public class Game {
         this.genre = genre;
     }
 
-    public String getPlataforms() {
-        return plataforms;
+    public String getPlatforms() {
+        return platforms;
     }
 
-    public void setPlataforms(String plataforms) {
-        this.plataforms = plataforms;
+    public void setPlatforms(String platforms) {
+        this.platforms = platforms;
     }
 
     public Double getScore() {
